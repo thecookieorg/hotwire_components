@@ -1,8 +1,10 @@
-<tr>
-  <td><%= @merchant.name %></td>
-  <td><%= @merchant.about %></td>
-  <td><%= @merchant.phone %></td>
-  <td><%= link_to 'Show', @merchant %></td>
-  <td><%= link_to 'Edit', edit_merchant_path(@merchant) %></td>
-  <td><%= link_to 'Destroy', @merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</tr>
+<turbo-frame id="merchant_<%= @merchant.id %>">
+  <tr>
+    <td><%= @merchant.name %></td>
+    <td><%= @merchant.about %></td>
+    <td><%= @merchant.phone %></td>
+    <td><%= link_to 'Show', @merchant %></td>
+    <td><%= link_to 'Edit', edit_merchant_path(@merchant) %></td>
+    <td><%= link_to 'Destroy', @merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+</turbo-frame>

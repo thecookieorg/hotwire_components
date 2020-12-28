@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "hotwire-rails", "~> 0.1.1"
 gem "view_component", require: "view_component/engine"
+gem "sidekiq"

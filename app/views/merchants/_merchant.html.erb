@@ -1,0 +1,11 @@
+<%= turbo_frame_tag dom_id(merchant) do %>
+  <div class="col-md-12">
+    <p><%= merchant.name %></p>
+    <p><%= merchant.about %></p>
+    <p><%= merchant.phone %></p>
+    <p><%= link_to 'Show', merchant %></p>
+    <p><%= link_to 'Edit', edit_merchant_path(merchant) %></p>
+    <p><%= link_to 'Destroy', merchant, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <hr />
+  </div>
+<% end %>

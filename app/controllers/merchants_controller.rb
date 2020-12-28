@@ -5,6 +5,7 @@ class MerchantsController < ApplicationController
   # GET /merchants.json
   def index
     @merchants = Merchant.all
+    @merchant = Merchant.new
   end
 
   # GET /merchants/1
@@ -28,9 +29,11 @@ class MerchantsController < ApplicationController
 
     respond_to do |format|
       if @merchant.save
+        format.turbo_stream
         format.html { redirect_to @merchant, notice: 'Merchant was successfully created.' }
         format.json { render :show, status: :created, location: @merchant }
       else
+        format.turbo_stream
         format.html { render :new }
         format.json { render json: @merchant.errors, status: :unprocessable_entity }
       end
@@ -42,6 +45,7 @@ class MerchantsController < ApplicationController
   def update
     respond_to do |format|
       if @merchant.update(merchant_params)
+        format.turbo_stream
         format.html { redirect_to @merchant, notice: 'Merchant was successfully updated.' }
         format.json { render :show, status: :ok, location: @merchant }
       else
