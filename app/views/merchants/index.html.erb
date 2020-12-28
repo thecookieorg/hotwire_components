@@ -1,0 +1,25 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <h1>Merchants</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>About</th>
+        <th>Phone</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render(MerchantComponent.with_collection(@merchants)) %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Merchant', new_merchant_path %>
+</div>
